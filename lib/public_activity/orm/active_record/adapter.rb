@@ -8,6 +8,7 @@ module PublicActivity
       class Adapter
         # Creates the activity on `trackable` with `options`
         def self.create_activity(trackable, options)
+          options.merge!(created_at: trackable.created_at)
           trackable.activities.create options
         end
       end
